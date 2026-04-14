@@ -1,6 +1,21 @@
 # QwQ 32B Reasoning Worker For RunPod Hub
 
+[![RunPod](https://api.runpod.io/badge/Bortlesboat/runpod-qwq-32b-reasoning-vllm)](https://console.runpod.io/hub/Bortlesboat/runpod-qwq-32b-reasoning-vllm)
+
 This repo packages an OpenAI-compatible `vLLM` worker around `Qwen/QwQ-32B` for H100-class RunPod Serverless deployments.
+
+Deploy on RunPod Hub:
+
+- https://console.runpod.io/hub/Bortlesboat/runpod-qwq-32b-reasoning-vllm
+
+Good search terms for this listing:
+
+- `qwq 32b`
+- `reasoning model`
+- `long reasoning`
+- `vllm`
+- `openai-compatible`
+- `h100`
 
 It is meant for longer-form reasoning use cases:
 

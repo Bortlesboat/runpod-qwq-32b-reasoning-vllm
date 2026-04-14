@@ -1,25 +1,18 @@
-# OpenAI-Compatible vLLM Worker
+# QwQ 32B Reasoning vLLM Worker
 
-Deploy a configurable `vLLM` serverless worker on RunPod Hub with:
+Deploy `Qwen/QwQ-32B` on RunPod Hub with an OpenAI-compatible `vLLM` worker tuned for longer reasoning-style outputs on H100-class hardware.
 
-- OpenAI-style chat and completion routes,
-- presets for `RTX 4090`, `A100`, and `H100`-class deployments,
-- exposed context-window and memory-tuning knobs,
-- a cheap smoke-test profile for Hub validation.
+## Best for
 
-## Input shortcuts
+- higher-effort assistants and research-style prompts,
+- users who expect longer outputs and lower concurrency than a general chat worker,
+- users searching for `QwQ`, `reasoning model`, `32B`, or `H100` on RunPod Hub.
 
-This worker accepts:
+## Request shapes
 
 - `prompt` for `/v1/completions`
 - `messages` for `/v1/chat/completions`
 - `route` + `body` for explicit OpenAI-compatible requests
-
-## Good defaults
-
-- `Smoke Test 125M`: fastest validation path
-- `Balanced 7B`: sensible one-GPU default
-- `H100 / 32B`: larger-context profile for higher-end GPUs
 
 ## Main knobs
 
@@ -27,11 +20,7 @@ This worker accepts:
 - `MAX_MODEL_LEN`
 - `GPU_MEMORY_UTILIZATION`
 - `MAX_NUM_SEQS`
-- `TENSOR_PARALLEL_SIZE`
-- `DTYPE`
-- `QUANTIZATION`
-- `TOKENIZER_MODE`
-- `CONFIG_FORMAT`
-- `LOAD_FORMAT`
+- `DEFAULT_MAX_TOKENS`
+- `MAX_CONCURRENCY`
 
-If you hit memory pressure, lower `MAX_MODEL_LEN` first. If you want a faster cold start, use the smoke preset or a smaller default model.
+The smoke test uses a smaller Qwen-family model on easier-to-find GPU capacity, but the deployment presets stay centered on H100-class reasoning use.
